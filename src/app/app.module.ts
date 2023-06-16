@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MarvinComponent } from './marvin/marvin.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProfilesComponent } from './profiles/profiles.component';
+import {LayoutModule} from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProfilesComponent } from './profiles/profiles.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

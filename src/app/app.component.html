@@ -4,9 +4,9 @@
     <img src="assets/images/logo-nav@2x.png" title="Home" style="height: 60px;"/>
   </a>
   <nav>
-    <a routerLink=""><fa-icon [icon]="faHouse"></fa-icon>Home</a>
-    <a routerLink="/marvin/profiles"><fa-icon [icon]="faUser"></fa-icon>Profiles</a>
-    <a routerLink="/marvin/timeline"><fa-icon [icon]="faTimeline"></fa-icon>Timeline</a>
+    <a *ngIf="!mobile" routerLink=""><fa-icon [icon]="faHouse"></fa-icon>Home</a>
+    <a *ngIf="!mobile" routerLink="/marvin/profiles"><fa-icon [icon]="faUser"></fa-icon>Profiles</a>
+    <a *ngIf="!mobile" routerLink="/marvin/timeline"><fa-icon [icon]="faTimeline"></fa-icon>Timeline</a>
   </nav>
 </header>
 <!--Content-->
