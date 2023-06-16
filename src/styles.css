@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-    background-color: #0d1117;
+    background-image: url("assets/images/background.jpg");
     color: #e6edf3;
     margin: 0;
 }
@@ -17,7 +17,7 @@ header.centered{
     justify-content: center;
 }
 footer {
-    height: 4em;
+    height: 5em;
     background-color: #161b22;
     display: flex;
     justify-content: center;
@@ -38,8 +38,4 @@ a {
 }
 nav > a{
     margin: 1em;
-}
-main {
-    max-width: 80%;
-    margin: auto;
 }
