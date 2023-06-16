@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { faUser, faHouse, faTimeline } from '@fortawesome/free-solid-svg-icons';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 
@@ -15,12 +15,13 @@ export class AppComponent {
   mobile = false;
 
   constructor(private responsive: BreakpointObserver){}
+
   ngOnInit(){
-    this.responsive.observe(Breakpoints.HandsetLandscape)
-      .subscribe(result => {
-        if(result.matches){
-          this.mobile = true;
-        }
-      })
+    this.mobile = this.responsive.isMatched([Breakpoints.XSmall, Breakpoints.Small]);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.mobile = this.responsive.isMatched([Breakpoints.XSmall, Breakpoints.Small]);
   }
 }

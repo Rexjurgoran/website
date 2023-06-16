@@ -12,6 +12,10 @@ header {
     align-items: center;
     background-color: #161b22;
 }
+header.centered{
+    padding: 0;
+    justify-content: center;
+}
 footer {
     height: 4em;
     background-color: #161b22;
