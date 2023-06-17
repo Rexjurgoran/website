@@ -1,23 +1,20 @@
 import { Component, OnInit, HostBinding, HostListener } from '@angular/core';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
-import { PROFILES } from '../mock-profiles';
-import { Profile } from '../profile';
+import { EVENTS } from '../mock-events';
 
 @Component({
-  selector: 'app-profiles',
-  templateUrl: './profiles.component.html',
-  styleUrls: ['./profiles.component.css']
+  selector: 'app-timeline',
+  templateUrl: './timeline.component.html',
+  styleUrls: ['./timeline.component.css']
 })
-export class ProfilesComponent implements OnInit {
+
+export class TimelineComponent {
 
   @HostBinding('style.width')
   public width = '80%';
-
+  
   mobile = false;
-  profiles = PROFILES;
-
-  faUser = faUser;
+  events = EVENTS;
 
   constructor(private responsive: BreakpointObserver) { }
 
@@ -30,10 +27,6 @@ export class ProfilesComponent implements OnInit {
     this.checkMobile();
   }
 
-  getIcon(profile: Profile){
-    return profile.icon;
-  }
-
   private checkMobile(){
     if (this.responsive.isMatched([Breakpoints.XSmall, Breakpoints.Small])) {
       this.mobile = true;
@@ -42,5 +35,4 @@ export class ProfilesComponent implements OnInit {
       this.width = '80%';
     };
   }
-
 }

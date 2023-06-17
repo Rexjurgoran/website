@@ -1,6 +1,6 @@
 <!--Header-->
 <header [ngClass]="{'centered':mobile}">
-  <a href="/">
+  <a routerLink="">
     <img  src="assets/images/logo-nav@2x.png" title="Home" style="height: 60px;"/>
   </a>
   <nav *ngIf="!mobile">
@@ -12,9 +12,18 @@
 <!--Content-->
 <router-outlet></router-outlet>
 <!--Footer-->
-<footer>
+<footer *ngIf="!mobile">
   <a href="/">
     <img src="assets/images/logo-small.png" title="Home" style="height: 40px; margin: 10px;"/>
   </a>
   <div>© 2023 Marvin Henßer</div>
+</footer>
+<footer *ngIf="mobile">
+  <nav class="mobile" >
+    <a routerLink="/marvin/profiles"><fa-icon [icon]="faUser"></fa-icon></a>
+    <a routerLink="">
+      <img src="assets/images/logo-small.png" title="Home" style="height: 40px; margin: 10px;"/>
+    </a>
+    <a routerLink="/marvin/timeline"><fa-icon [icon]="faTimeline"></fa-icon></a>
+  </nav>
 </footer>

@@ -8,3 +8,10 @@
     width: 80%;
     min-height: calc(100vh - 10em);
 }
+li.event {
+    background: rgba(219, 102, 0, 0.2);
+    border-radius: 0.5em;
+    border: solid 1px black;
+    padding: 1em;
+    margin: 1em;
+}

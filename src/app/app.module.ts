@@ -7,12 +7,14 @@ import { MarvinComponent } from './marvin/marvin.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProfilesComponent } from './profiles/profiles.component';
 import {LayoutModule} from '@angular/cdk/layout';
+import { TimelineComponent } from './timeline/timeline.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MarvinComponent,
-    ProfilesComponent
+    ProfilesComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,

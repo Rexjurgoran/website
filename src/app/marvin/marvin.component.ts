@@ -7,8 +7,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
   styleUrls: ['./marvin.component.css']
 })
 export class MarvinComponent {
-  defaultWidth = '80%';
-  mobile = false;
+
   @HostBinding('style.width')
   public width = '80%';
 
