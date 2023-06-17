@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, HostBinding } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 
 @Component({
   selector: 'app-marvin',
@@ -6,5 +7,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./marvin.component.css']
 })
 export class MarvinComponent {
+  defaultWidth = '80%';
+  mobile = false;
+  @HostBinding('style.width')
+  public width = '80%';
 
+  constructor(private responsive: BreakpointObserver) {}
+
+  ngOnInit(){
+    if (this.responsive.isMatched([Breakpoints.XSmall, Breakpoints.Small])) {
+      this.width = '100%';
+    }else{
+      this.width = '80%';
+    };
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    if (this.responsive.isMatched([Breakpoints.XSmall, Breakpoints.Small])) {
+      this.width = '100%';
+    }else{
+      this.width = '80%';
+    };
+  }
 }
