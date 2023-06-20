@@ -8,3 +8,6 @@
     width: 80%;
     min-height: calc(100vh - 10em);
 }
+li.profile {
+    margin: 1em;
+}
