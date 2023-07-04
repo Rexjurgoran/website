@@ -1,5 +1,5 @@
 <ol>
-    <li class="event" *ngFor="let event of events">
+    <li class="event {{event.type}}" *ngFor="let event of events">
         <h3>{{event.date}}: {{event.name}}</h3>
         <hr>
         <p>{{event.description}}</p>

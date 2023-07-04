@@ -8,10 +8,18 @@
     width: 80%;
     min-height: calc(100vh - 10em);
 }
-li.event {
-    background: rgba(219, 102, 0, 0.2);
+li.event {  
     border-radius: 0.5em;
     border: solid 1px black;
     padding: 1em;
     margin: 1em;
+}
+li.event.education {
+    background: rgba(219, 102, 0, 0.2);
+}
+li.event.skill {
+    background: rgba(102, 219, 0, 0.2);
+}
+li.event.position {
+    background: rgba(0, 102, 219, 0.2);
 }
