@@ -9,9 +9,19 @@ import (
 	"github.com/gorilla/mux"
 )
 
+type EventType string
+
+const (
+	Education EventType = "education"
+	Skill     EventType = "skill"
+	Position  EventType = "position"
+)
+
 type Event struct {
 	Date  time.Time `json:"date"`
+	Title string    `json:"title"`
 	Event string    `json:"event"`
+	Type  EventType `json:"type"`
 }
 
 func main() {
@@ -31,6 +41,6 @@ func getEvents(response http.ResponseWriter, request *http.Request) {
 
 func buildEvents() []Event {
 	return []Event{
-		{time.Now(), "Something"},
+		{time.Date(2023, time.January, 0, 0, 0, 0, 0, time.Now().Location()), "Master degree", "Achieved master degree in IT-Management", Education},
 	}
 }
