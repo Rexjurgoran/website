@@ -1,6 +1,7 @@
 import { Component, OnInit, HostBinding, HostListener } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
-import { EVENTS } from '../mock-events';
+import { Event } from '../event';
+import { EventService } from '../event.service';
 
 @Component({
   selector: 'app-timeline',
@@ -8,18 +9,21 @@ import { EVENTS } from '../mock-events';
   styleUrls: ['./timeline.component.css']
 })
 
-export class TimelineComponent {
+export class TimelineComponent implements OnInit{
 
   @HostBinding('style.width')
   public width = '80%';
   
   mobile = false;
-  events = EVENTS;
+  events: Event[] = [];
 
-  constructor(private responsive: BreakpointObserver) { }
+  constructor(
+    private responsive: BreakpointObserver,
+    private eventService: EventService) { }
 
-  ngOnInit(){
+  ngOnInit(): void{
     this.checkMobile();
+    this.getEvents();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -27,12 +31,24 @@ export class TimelineComponent {
     this.checkMobile();
   }
 
-  private checkMobile(){
+  checkMobile(): void{
     if (this.responsive.isMatched([Breakpoints.XSmall, Breakpoints.Small])) {
       this.mobile = true;
       this.width = '100%';
     }else{
       this.width = '80%';
     };
+  }
+
+  getEvents(): void {
+    this.eventService.getEvents()
+    .subscribe(events => {
+      this.events = events.map(this.reworkEvent)
+    });
+  }
+
+  reworkEvent(event: Event): Event{
+    event.date = new Date(event.date);
+    return event;
   }
 }
