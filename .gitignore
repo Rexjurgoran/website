@@ -7,7 +7,7 @@
 /bazel-out
 
 # Node
-/node_modules
+frontend/node_modules/
 npm-debug.log
 yarn-error.log
 
@@ -29,13 +29,15 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
 .sass-cache/
 /connect.lock
 /coverage
 /libpeerconnection.log
 testem.log
 /typings
+
+# Ignore cache created with the Angular CLI.
+frontend/.angular
 
 # System files
 .DS_Store
