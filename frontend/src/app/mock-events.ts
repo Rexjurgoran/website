@@ -7,6 +7,11 @@ export const EVENTS: Event[] = [{
     type: EventType.Education
 },{
     date: new Date(2020,9),
+    title: 'Application Developer @ HARTING Technology Group',
+    event: 'Switched position to fulltime developer within HARTING Technology Group. Started also doing web development.',
+    type: EventType.Position
+},{
+    date: new Date(2020,9),
     title: 'Bachelor degree', 
     event:'Achieved bachelor degree in Business Informatics', 
     type: EventType.Education
@@ -26,7 +31,7 @@ export const EVENTS: Event[] = [{
     event:'Finished school with advanced classes in physics and math', 
     type: EventType.Education
 },{
-    date: new Date(2013),
+    date: new Date(2013,7),
     title: 'Java',
     event: 'Learned Java in informatics class during later years of school',
     type: EventType.Skill
