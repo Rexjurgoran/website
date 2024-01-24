@@ -8,6 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProfilesComponent } from './profiles/profiles.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import { TimelineComponent } from './timeline/timeline.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TimelineComponent } from './timeline/timeline.component';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    LayoutModule
+    LayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

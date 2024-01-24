@@ -4,8 +4,8 @@ export enum EventType {
     Position = "position"
 }
 export interface Event{
-    date: string;
-    name: string;
-    description: string,
+    date: Date;
+    title: string;
+    event: string,
     type: EventType
 }
