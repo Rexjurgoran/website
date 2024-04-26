@@ -39,7 +39,7 @@ func createLogger() {
 	if err != nil {
 		panic(err)
 	}
-	filename := wd + "/log/backend" + today + ".log"
+	filename := wd + "/logs/backend" + today + ".log"
 	file, err := os.OpenFile(
 		filename,
 		os.O_APPEND|os.O_CREATE|os.O_WRONLY,
