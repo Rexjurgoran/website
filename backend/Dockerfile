@@ -2,12 +2,14 @@ FROM golang
 
 WORKDIR /app
 
-COPY . .
+COPY go.mod go.sum ./
 
 RUN go mod download
 
-RUN go build
+COPY *.go ./
+
+RUN CGO_ENABLED=0 GOOS=linux go build -o /backend
 
 EXPOSE 80
 
-CMD [ "backend" ]
+CMD ["/backend"]
