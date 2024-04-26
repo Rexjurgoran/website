@@ -35,6 +35,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+backend/log
 
 # Ignore cache created with the Angular CLI.
 frontend/.angular
