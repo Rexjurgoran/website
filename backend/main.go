@@ -2,11 +2,13 @@ package main
 
 import (
 	"encoding/json"
-	"log"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/gorilla/mux"
+	"github.com/rs/zerolog/log"
+	"go.elastic.co/ecszerolog"
 )
 
 type EventType string
@@ -25,9 +27,29 @@ type Event struct {
 }
 
 func main() {
+	createLogger()
 	router := mux.NewRouter()
 	router.HandleFunc("/events", getEvents).Methods("GET")
-	log.Fatal(http.ListenAndServe(":80", router))
+	log.Fatal().Msg(http.ListenAndServe(":80", router).Error())
+}
+
+func createLogger() {
+	today := time.Now().Format(time.DateOnly)
+	wd, err := os.Getwd()
+	if err != nil {
+		panic(err)
+	}
+	filename := wd + "/log/backend" + today + ".log"
+	file, err := os.OpenFile(
+		filename,
+		os.O_APPEND|os.O_CREATE|os.O_WRONLY,
+		0664,
+	)
+	if err != nil {
+		panic(err)
+	}
+	logger := ecszerolog.New(file)
+	log.Logger = logger
 }
 
 func getEvents(response http.ResponseWriter, request *http.Request) {
@@ -35,7 +57,9 @@ func getEvents(response http.ResponseWriter, request *http.Request) {
 	events := buildEvents()
 	error := json.NewEncoder(response).Encode(events)
 	if error != nil {
-		log.Fatal(error.Error())
+		log.Fatal().Msg(error.Error())
+	} else {
+		log.Info().Msg("getEvents() was successfull")
 	}
 }
 
