@@ -13,7 +13,12 @@ services:
       - ./logs:/app/logs
     env_file:
       - ./env/backend.env
+    depends_on:
+      - mongodb
   frontend:
     build: ./frontend
     ports:
       - "4200:4200"
+
+volumes:
+  data:
