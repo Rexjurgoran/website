@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"net/http"
 	"os"
@@ -9,6 +10,8 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/rs/zerolog/log"
 	"go.elastic.co/ecszerolog"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 type EventType string
@@ -26,8 +29,15 @@ type Event struct {
 	Type  EventType `json:"type"`
 }
 
+var ctx context.Context
+var client *mongo.Client
+var collection *mongo.Collection
+
 func main() {
 	createLogger()
+	createDBConnection()
+	createDBCollection()
+	fillDB()
 	router := mux.NewRouter()
 	router.HandleFunc("/events", getEvents).Methods("GET")
 	log.Fatal().Msg(http.ListenAndServe(":80", router).Error())
@@ -50,6 +60,32 @@ func createLogger() {
 	}
 	logger := ecszerolog.New(file)
 	log.Logger = logger
+}
+
+func createDBConnection() {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+	var err error
+	client, err = mongo.Connect(ctx, options.Client().ApplyURI("mongodb://"+os.Getenv("MONGODB_USERNAME")+":"+os.Getenv("MONGODB_PASSWORD")+"@mongodb:27017/"))
+	if err != nil {
+		log.Fatal().Msg(err.Error())
+	}
+}
+
+func createDBCollection() {
+	database := client.Database("database")
+	collection := database.Collection("collection")
+	collection.Drop(ctx)
+}
+
+func fillDB() {
+	events := buildEvents()
+	insertManyDocument := []interface{}{}
+	insertManyDocument = append(insertManyDocument, events)
+	_, err := collection.InsertMany(ctx, insertManyDocument)
+	if err != nil {
+		log.Error().Msg(err.Error())
+	}
 }
 
 func getEvents(response http.ResponseWriter, request *http.Request) {
