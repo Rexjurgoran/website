@@ -1,7 +1,7 @@
 <ol>
-    <li class="event {{event.type}}" *ngFor="let event of events">
+    <li class="event {{event.type}}" *ngFor="let event of events" >
         <h3>{{event.date.getFullYear()}}: {{event.title}}</h3>
-        <hr>
+        <hr class="{{event.type}}">
         <p>{{event.event}}</p>
     </li>
 </ol>

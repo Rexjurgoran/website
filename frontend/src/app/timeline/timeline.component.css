@@ -15,11 +15,20 @@ li.event {
     margin: 1em;
 }
 li.event.education {
-    background: rgba(219, 102, 0, 0.2);
+    border-color: rgba(219, 102, 0);
 }
 li.event.skill {
-    background: rgba(102, 219, 0, 0.2);
+    border-color: rgba(102, 219, 0);
 }
 li.event.position {
-    background: rgba(0, 102, 219, 0.2);
+    border-color: rgba(0, 102, 219);
+}
+hr.education {
+    border-color: rgba(219, 102, 0);
+}
+hr.skill {
+    border-color: rgba(102, 219, 0);
+}
+hr.position {
+    border-color: rgba(0, 102, 219);
 }
