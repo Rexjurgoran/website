@@ -1,11 +1,24 @@
 services:
+  mongodb:
+    image: 'mongo'
+    volumes:
+     - data:/data/db
+    env_file:
+      - ./env/mongo.env
   backend:
     build: ./backend
     ports:
       - "80:80"
     volumes:
       - ./logs:/app/logs
+    env_file:
+      - ./env/backend.env
+    depends_on:
+      - mongodb
   frontend:
     build: ./frontend
     ports:
       - "4200:4200"
+
+volumes:
+  data:

@@ -20,10 +20,10 @@ const (
 )
 
 type Event struct {
-	Date  time.Time `json:"date"`
-	Title string    `json:"title"`
-	Event string    `json:"event"`
-	Type  EventType `json:"type"`
+	Date  time.Time `json:"date" bson:"date"`
+	Title string    `json:"title" bson:"title"`
+	Event string    `json:"event" bson:"event"`
+	Type  EventType `json:"type" bson:"type"`
 }
 
 func main() {
@@ -54,37 +54,11 @@ func createLogger() {
 
 func getEvents(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("Content-Type", "application/json")
-	events := buildEvents()
+	events := readEvents()
 	error := json.NewEncoder(response).Encode(events)
 	if error != nil {
 		log.Fatal().Msg(error.Error())
 	} else {
 		log.Info().Msg("getEvents() was successfull")
-	}
-}
-
-func buildEvents() []Event {
-	return []Event{
-		{
-			time.Date(2023, time.June, 30, 16, 45, 0, 0, time.Now().Location()),
-			"Master degree",
-			"Achieved master degree in IT-Management",
-			Education,
-		}, {
-			time.Date(2020, time.September, 18, 17, 45, 0, 0, time.Now().Location()),
-			"Bachelor degree",
-			"Achieved bachelor degree in Business Informatics",
-			Education,
-		}, {
-			time.Date(2017, time.August, 21, 8, 0, 0, 0, time.Now().Location()),
-			"Dual Student @ HARTING Technology Group",
-			"Started working as dual student Business Informatics within HARTING Technology Group. Mainly doing SAP development and PLM configuration.",
-			Position,
-		}, {
-			time.Date(2017, time.July, 7, 0, 0, 0, 0, time.Now().Location()),
-			"Finished school",
-			"Finished school with advanced classes in physics and math",
-			Education,
-		},
 	}
 }
