@@ -6,29 +6,18 @@
     background-color: rgba(13, 17, 23, 0.5);
     backdrop-filter: blur(20px);
     width: 80%;
-    min-height: calc(100vh - 10em);
+    min-height: calc(100vh - 5em);
 }
-li.event {  
-    border-radius: 0.5em;
-    border: solid 1px black;
+mat-card {  
     padding: 1em;
     margin: 1em;
 }
-li.event.education {
-    border-color: rgba(219, 102, 0);
+fa-icon.education {
+    color: rgba(219, 102, 0);
 }
-li.event.skill {
-    border-color: rgba(102, 219, 0);
+fa-icon.skill {
+    color: rgba(102, 219, 0);
 }
-li.event.position {
-    border-color: rgba(0, 102, 219);
-}
-hr.education {
-    border-color: rgba(219, 102, 0);
-}
-hr.skill {
-    border-color: rgba(102, 219, 0);
-}
-hr.position {
-    border-color: rgba(0, 102, 219);
+fa-icon.position {
+    color: rgba(0, 102, 219);
 }

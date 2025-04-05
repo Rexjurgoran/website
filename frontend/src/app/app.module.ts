@@ -12,6 +12,9 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -24,5 +27,8 @@ import { BrowserModule } from '@angular/platform-browser';
         FontAwesomeModule,
         LayoutModule,
         MatSlideToggleModule,
-        CommonModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        CommonModule,
+        RouterModule,
+        MatCardModule,
+        MatChipsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

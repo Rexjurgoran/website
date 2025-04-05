@@ -6,7 +6,7 @@
     background-color: rgba(13, 17, 23, 0.5);
     backdrop-filter: blur(20px);
     width: 80%;
-    min-height: calc(100vh - 10em);
+    min-height: calc(100vh - 5em);
 }
 li.profile {
     margin: 1em;
