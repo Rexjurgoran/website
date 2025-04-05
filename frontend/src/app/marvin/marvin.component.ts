@@ -2,9 +2,10 @@ import { Component, HostListener, HostBinding } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 
 @Component({
-  selector: 'app-marvin',
-  templateUrl: './marvin.component.html',
-  styleUrls: ['./marvin.component.css']
+    selector: 'app-marvin',
+    templateUrl: './marvin.component.html',
+    styleUrls: ['./marvin.component.css'],
+    standalone: false
 })
 export class MarvinComponent {
 

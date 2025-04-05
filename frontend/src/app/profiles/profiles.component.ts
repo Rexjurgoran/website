@@ -5,9 +5,10 @@ import { PROFILES } from '../mock-profiles';
 import { Profile } from '../profile';
 
 @Component({
-  selector: 'app-profiles',
-  templateUrl: './profiles.component.html',
-  styleUrls: ['./profiles.component.css']
+    selector: 'app-profiles',
+    templateUrl: './profiles.component.html',
+    styleUrls: ['./profiles.component.css'],
+    standalone: false
 })
 export class ProfilesComponent implements OnInit {
 

@@ -4,9 +4,10 @@ import { Event } from '../event';
 import { EventService } from '../event.service';
 
 @Component({
-  selector: 'app-timeline',
-  templateUrl: './timeline.component.html',
-  styleUrls: ['./timeline.component.css']
+    selector: 'app-timeline',
+    templateUrl: './timeline.component.html',
+    styleUrls: ['./timeline.component.css'],
+    standalone: false
 })
 
 export class TimelineComponent implements OnInit{
