@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,23 +8,27 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProfilesComponent } from './profiles/profiles.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import { TimelineComponent } from './timeline/timeline.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    MarvinComponent,
-    ProfilesComponent,
-    TimelineComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FontAwesomeModule,
-    LayoutModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        MarvinComponent,
+        ProfilesComponent,
+        TimelineComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FontAwesomeModule,
+        LayoutModule,
+        MatSlideToggleModule,
+        CommonModule,
+        RouterModule,
+        MatCardModule,
+        MatChipsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

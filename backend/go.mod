@@ -1,4 +1,4 @@
-module henssler.de/backend
+module henssler/backend
 
 go 1.19
 

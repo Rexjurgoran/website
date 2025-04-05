@@ -4,11 +4,11 @@ import { Event } from '../event';
 import { EventService } from '../event.service';
 
 @Component({
-  selector: 'app-timeline',
-  templateUrl: './timeline.component.html',
-  styleUrls: ['./timeline.component.css']
+    selector: 'app-timeline',
+    templateUrl: './timeline.component.html',
+    styleUrls: ['./timeline.component.css'],
+    standalone: false
 })
-
 export class TimelineComponent implements OnInit{
 
   @HostBinding('style.width')
@@ -51,4 +51,8 @@ export class TimelineComponent implements OnInit{
     event.date = new Date(event.date);
     return event;
   }
+
+    getIcon(event: Event){
+      return event.icon;
+    }
 }
