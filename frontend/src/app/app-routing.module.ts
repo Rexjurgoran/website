@@ -5,10 +5,9 @@ import { ProfilesComponent } from './profiles/profiles.component';
 import { TimelineComponent } from './timeline/timeline.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'marvin', title: "Henßler", pathMatch: 'full'},
-  {path: 'marvin', component: MarvinComponent, title: "Marvin Henßer"},
-  {path: 'marvin/profiles', component: ProfilesComponent, title: "Profiles"},
-  {path: 'marvin/timeline', component: TimelineComponent, title: "Timeline"}
+  {path: '', component: MarvinComponent, title: "Marvin Henßer"},
+  {path: 'profiles', component: ProfilesComponent, title: "Profiles"},
+  {path: 'timeline', component: TimelineComponent, title: "Timeline"}
 ];
 
 @NgModule({

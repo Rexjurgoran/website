@@ -5,8 +5,8 @@
   </a>
   <nav *ngIf="!mobile">
     <a routerLink=""><fa-icon [icon]="faHouse"></fa-icon>Home</a>
-    <a routerLink="/marvin/profiles"><fa-icon [icon]="faUser"></fa-icon>Profiles</a>
-    <a routerLink="/marvin/timeline"><fa-icon [icon]="faTimeline"></fa-icon>Timeline</a>
+    <a routerLink="/profiles"><fa-icon [icon]="faUser"></fa-icon>Profiles</a>
+    <a routerLink="/timeline"><fa-icon [icon]="faTimeline"></fa-icon>Timeline</a>
   </nav>
 </header>
 <!--Content-->
@@ -20,10 +20,10 @@
 </footer>
 <footer *ngIf="mobile">
   <nav class="mobile" >
-    <a routerLink="/marvin/profiles"><fa-icon [icon]="faUser"></fa-icon></a>
+    <a routerLink="/profiles"><fa-icon [icon]="faUser"></fa-icon></a>
     <a routerLink="">
       <img src="assets/images/logo-small.png" title="Home" style="height: 40px; margin: 10px;"/>
     </a>
-    <a routerLink="/marvin/timeline"><fa-icon [icon]="faTimeline"></fa-icon></a>
+    <a routerLink="/timeline"><fa-icon [icon]="faTimeline"></fa-icon></a>
   </nav>
 </footer>
