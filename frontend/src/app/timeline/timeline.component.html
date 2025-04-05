@@ -1,7 +1,7 @@
 <!-- <mat-chip-set>
     <mat-chip *ngFor="let type of EventType | keyvalue">{{type.key}}{{type.value}}</mat-chip>
 </mat-chip-set> -->
-<div>
+<div id="card-container">
     <mat-card class="event" appearance="outlined" *ngFor="let event of events">
         <mat-card-header>
             <mat-card-title-group>
@@ -16,3 +16,7 @@
         </mat-card-content>
     </mat-card>
 </div>
+
+<meta property="og:title" content="Marvin Henßler - Timeline"/>
+<meta property="og:description" content="Have a look at some of my professional milestones."/>
+<meta property="og:site_name" content="henssler.me"/>
