@@ -1,28 +1,48 @@
 <!--Header-->
-<header [ngClass]="{'centered':mobile}">
+<header [ngClass]="{ centered: mobile }">
   <a routerLink="">
-    <img  src="assets/images/logo-nav@2x.png" title="Home" style="height: 60px;"/>
+    <img
+      src="assets/images/logo-nav@2x.png"
+      title="Home"
+      style="height: 60px"
+    />
   </a>
-  <nav *ngIf="!mobile">
-    <a routerLink=""><fa-icon [icon]="faHouse"></fa-icon>Home</a>
-    <a routerLink="/profiles"><fa-icon [icon]="faUser"></fa-icon>Profiles</a>
-    <a routerLink="/timeline"><fa-icon [icon]="faTimeline"></fa-icon>Timeline</a>
+  <nav mat-tab-nav-bar [tabPanel]="tabPanel" *ngIf="!mobile">
+    <a
+      mat-tab-link
+      *ngFor="let route of routes"
+      [routerLink]="route.path"
+      (click)="activeLink = route.path"
+      [active]="activeLink == route.path"
+    >
+      <fa-icon [icon]="route.icon"></fa-icon>{{ route.label }}
+    </a>
   </nav>
 </header>
 <!--Content-->
-<router-outlet></router-outlet>
+<mat-tab-nav-panel #tabPanel>
+  <router-outlet></router-outlet>
+</mat-tab-nav-panel>
 <!--Footer-->
 <footer *ngIf="!mobile">
   <a href="/">
-    <img src="assets/images/logo-small.png" title="Home" style="height: 40px; margin: 10px;"/>
+    <img
+      src="assets/images/logo-small.png"
+      title="Home"
+      style="height: 40px; margin: 10px"
+    />
   </a>
-  <div>© 2024 Marvin Henßer</div>
+  <div>© 2025 Marvin Henßer</div>
 </footer>
 <footer *ngIf="mobile">
-  <nav class="mobile" >
+  <nav class="mobile">
     <a routerLink="/profiles"><fa-icon [icon]="faUser"></fa-icon></a>
     <a routerLink="">
-      <img src="assets/images/logo-small.png" title="Home" style="height: 40px; margin: 10px;"/>
+      <img
+        src="assets/images/logo-small.png"
+        title="Home"
+        style="height: 40px; margin: 10px"
+      />
     </a>
     <a routerLink="/timeline"><fa-icon [icon]="faTimeline"></fa-icon></a>
   </nav>

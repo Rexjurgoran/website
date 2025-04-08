@@ -13,6 +13,13 @@ export class AppComponent {
   faHouse = faHouse;
   faTimeline = faTimeline;
 
+  routes = [
+    { icon: faHouse, path: '', label: 'Home' },
+    { icon: faUser, path: '/profiles', label: 'Profiles' },
+    { icon: faTimeline, path: '/timeline', label: 'Timeline' }
+  ]
+
+  activeLink = "";
   mobile = false;
 
   constructor(private responsive: BreakpointObserver){}

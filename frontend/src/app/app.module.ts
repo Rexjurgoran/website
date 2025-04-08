@@ -15,6 +15,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -30,5 +32,7 @@ import {MatChipsModule} from '@angular/material/chips';
         CommonModule,
         RouterModule,
         MatCardModule,
-        MatChipsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        MatChipsModule,
+        MatStepperModule,
+        MatTabsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
