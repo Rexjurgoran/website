@@ -2,6 +2,12 @@ import { Event, EventType} from "./event";
 import { faGraduationCap, faBriefcase, faAward } from "@fortawesome/free-solid-svg-icons";
 
 export const EVENTS: Event[] = [{
+    icon: faAward,
+    date: new Date(2025,10),
+    title: 'PRINCE2 7 Foundation Certificate',
+    event: 'Achieved PRINCE2 7 Foundation Certificate in Project Management',
+    type: EventType.Skill
+},{
     icon: faGraduationCap,
     date: new Date(2023,6),
     title: 'Master degree', 
