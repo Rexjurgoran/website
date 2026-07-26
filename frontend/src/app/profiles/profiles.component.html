@@ -1,5 +1,7 @@
 <ul>
-    <li class="profile" *ngFor="let profile of profiles">
-        <fa-icon [icon]="getIcon(profile)"></fa-icon><a href="{{profile.link}}" target="_blank">{{profile.name}}</a>
+  @for (profile of profiles; track profile) {
+    <li class="profile">
+      <fa-icon [icon]="getIcon(profile)"></fa-icon><a href="{{profile.link}}" target="_blank">{{profile.name}}</a>
     </li>
+  }
 </ul>
