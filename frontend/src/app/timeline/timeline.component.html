@@ -1,18 +1,18 @@
-<!-- <mat-chip-set>
-<mat-chip *ngFor="let type of EventType | keyvalue">{{type.key}}{{type.value}}</mat-chip>
-</mat-chip-set> -->
+<h2>Here is a short overview of my professional path</h2>
 <div id="card-container">
   @for (event of events; track event) {
     <mat-card class="event" appearance="outlined">
       <mat-card-header>
         <mat-card-title-group>
-          <div><fa-icon class="{{event.type}}" [icon]="getIcon(event)"></fa-icon></div>
-          <mat-card-title>{{event.title}}</mat-card-title>
-          <mat-card-subtitle>{{event.date.getFullYear()}}</mat-card-subtitle>
+          <div>
+            <fa-icon class="{{ event.type }}" [icon]="getIcon(event)"></fa-icon>
+          </div>
+          <mat-card-title>{{ event.title }}</mat-card-title>
+          <mat-card-subtitle>{{ event.date.getFullYear() }}</mat-card-subtitle>
         </mat-card-title-group>
       </mat-card-header>
       <mat-card-content>
-        {{event.event}}
+        {{ event.event }}
       </mat-card-content>
     </mat-card>
   }

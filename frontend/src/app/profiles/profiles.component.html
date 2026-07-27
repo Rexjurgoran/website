@@ -1,7 +1,9 @@
+<h2>You can find me across a few platforms below</h2>
 <ul>
   @for (profile of profiles; track profile) {
     <li class="profile">
-      <fa-icon [icon]="getIcon(profile)"></fa-icon><a href="{{profile.link}}" target="_blank">{{profile.name}}</a>
+      <fa-icon [icon]="getIcon(profile)"></fa-icon
+      ><a href="{{ profile.link }}" target="_blank">{{ profile.name }}</a>
     </li>
   }
 </ul>
