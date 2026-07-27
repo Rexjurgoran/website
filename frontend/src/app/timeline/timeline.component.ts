@@ -27,7 +27,7 @@ export class TimelineComponent implements OnInit{
     this.getEvents();
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize() {
     this.checkMobile();
   }

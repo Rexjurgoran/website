@@ -23,7 +23,7 @@ export class MarvinComponent {
     };
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize() {
     if (this.responsive.isMatched([Breakpoints.XSmall, Breakpoints.Small])) {
       this.width = '100%';

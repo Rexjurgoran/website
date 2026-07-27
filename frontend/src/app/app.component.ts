@@ -22,7 +22,7 @@ export class AppComponent {
     this.mobile = this.responsive.isMatched([Breakpoints.XSmall, Breakpoints.Small]);
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize() {
     this.mobile = this.responsive.isMatched([Breakpoints.XSmall, Breakpoints.Small]);
   }

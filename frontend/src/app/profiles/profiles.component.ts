@@ -27,7 +27,7 @@ export class ProfilesComponent implements OnInit {
     this.checkMobile();
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize() {
     this.checkMobile();
   }
