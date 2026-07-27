@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding, HostListener } from '@angular/core';
+import { Component, OnInit, HostBinding, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 import { PROFILES } from '../mock-profiles';
@@ -8,6 +8,7 @@ import { Profile } from '../profile';
     selector: 'app-profiles',
     templateUrl: './profiles.component.html',
     styleUrls: ['./profiles.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ProfilesComponent implements OnInit {

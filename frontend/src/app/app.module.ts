@@ -8,7 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProfilesComponent } from './profiles/profiles.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import { TimelineComponent } from './timeline/timeline.component';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
@@ -30,5 +30,5 @@ import {MatChipsModule} from '@angular/material/chips';
         CommonModule,
         RouterModule,
         MatCardModule,
-        MatChipsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        MatChipsModule], providers: [provideHttpClient(withXhr(), withInterceptorsFromDi())] })
 export class AppModule { }

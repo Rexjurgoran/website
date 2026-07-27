@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding, HostListener } from '@angular/core';
+import { Component, OnInit, HostBinding, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 import { Event } from '../event';
 import { EventService } from '../event.service';
@@ -7,6 +7,7 @@ import { EventService } from '../event.service';
     selector: 'app-timeline',
     templateUrl: './timeline.component.html',
     styleUrls: ['./timeline.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class TimelineComponent implements OnInit{

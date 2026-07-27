@@ -1,10 +1,11 @@
-import { Component, HostListener, HostBinding } from '@angular/core';
+import { Component, HostListener, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 
 @Component({
     selector: 'app-marvin',
     templateUrl: './marvin.component.html',
     styleUrls: ['./marvin.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class MarvinComponent {
