@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && node scripts/prepare-pages-build.js",
+    "build": "ng build",
+    "build:pages": "npm run build && node scripts/prepare-pages-build.js",
+    "prepare:pages": "node scripts/prepare-pages-build.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
