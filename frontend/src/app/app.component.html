@@ -1,7 +1,7 @@
 <!--Header-->
 <header [ngClass]="{'centered':mobile}">
   <a routerLink="">
-    <img  src="assets/images/logo-nav@2x.png" title="Home" style="height: 60px;"/>
+    <img src="assets/images/logo-nav@2x.png" alt="Home" title="Home" style="height: 60px;" />
   </a>
   @if (!mobile) {
     <nav>
@@ -17,7 +17,7 @@
 @if (!mobile) {
   <footer>
     <a href="/">
-      <img src="assets/images/logo-small.png" title="Home" style="height: 40px; margin: 10px;"/>
+      <img src="assets/images/logo-small.png" alt="Home" title="Home" style="height: 40px; margin: 10px;" />
     </a>
     <div>© 2024 Marvin Henßer</div>
   </footer>
@@ -27,7 +27,7 @@
     <nav class="mobile" >
       <a routerLink="/profiles"><fa-icon [icon]="faUser"></fa-icon></a>
       <a routerLink="">
-        <img src="assets/images/logo-small.png" title="Home" style="height: 40px; margin: 10px;"/>
+        <img src="assets/images/logo-small.png" alt="Home" title="Home" style="height: 40px; margin: 10px;" />
       </a>
       <a routerLink="/timeline"><fa-icon [icon]="faTimeline"></fa-icon></a>
     </nav>

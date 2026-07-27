@@ -1,34 +1,39 @@
 import { NgModule } from '@angular/core';
-// import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MarvinComponent } from './marvin/marvin.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProfilesComponent } from './profiles/profiles.component';
-import {LayoutModule} from '@angular/cdk/layout';
+import { LayoutModule } from '@angular/cdk/layout';
 import { TimelineComponent } from './timeline/timeline.component';
 import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import {MatCardModule} from '@angular/material/card';
-import {MatChipsModule} from '@angular/material/chips';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 
-@NgModule({ declarations: [
-        AppComponent,
-        MarvinComponent,
-        ProfilesComponent,
-        TimelineComponent
-    ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
-        AppRoutingModule,
-        FontAwesomeModule,
-        LayoutModule,
-        MatSlideToggleModule,
-        CommonModule,
-        RouterModule,
-        MatCardModule,
-        MatChipsModule], providers: [provideHttpClient(withXhr(), withInterceptorsFromDi())] })
+@NgModule({
+  declarations: [
+    AppComponent,
+    MarvinComponent,
+    ProfilesComponent
+  ],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    LayoutModule,
+    MatSlideToggleModule,
+    CommonModule,
+    RouterModule,
+    MatCardModule,
+    MatChipsModule,
+    TimelineComponent
+  ],
+  providers: [provideHttpClient(withXhr(), withInterceptorsFromDi())]
+})
 export class AppModule { }

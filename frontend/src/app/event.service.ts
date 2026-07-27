@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -12,15 +12,14 @@ import { EVENTS } from './mock-events';
   providedIn: 'root'
 })
 export class EventService {
+  private readonly http = inject(HttpClient);
 
   private readonly backendUrl = environment.backendUrl?.replace(/\/+$/u, '');
   private readonly eventsUrl = this.backendUrl ? `${this.backendUrl}/events` : '';
 
-  httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'})
+  private readonly httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-
-  constructor(private readonly http: HttpClient) { }
 
   /** GET events from the server, or fallback to local mock events when no backend is configured */
   getEvents(): Observable<Event[]> {
@@ -34,10 +33,10 @@ export class EventService {
       );
   }
 
-  private handleError<T>(result?: T){
-    return (error: any): Observable<T> => {
+  private handleError<T>(result?: T) {
+    return (error: unknown): Observable<T> => {
       console.warn(error);
       return of(result as T);
-    }
+    };
   }
 }

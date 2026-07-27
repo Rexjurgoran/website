@@ -1,26 +1,28 @@
-import { Component, OnInit, HostBinding, HostListener, ChangeDetectionStrategy } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
+import { CommonModule } from '@angular/common';
+import { Component, OnInit, HostBinding, HostListener, ChangeDetectionStrategy, inject } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { MatCardModule } from '@angular/material/card';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Event } from '../event';
 import { EventService } from '../event.service';
 
 @Component({
-    selector: 'app-timeline',
-    templateUrl: './timeline.component.html',
-    styleUrls: ['./timeline.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+  selector: 'app-timeline',
+  templateUrl: './timeline.component.html',
+  styleUrls: ['./timeline.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [CommonModule, FontAwesomeModule, MatCardModule]
 })
-export class TimelineComponent implements OnInit{
+export class TimelineComponent implements OnInit {
+  private readonly responsive = inject(BreakpointObserver);
+  private readonly eventService = inject(EventService);
 
   @HostBinding('style.width')
   public width = '80%';
-  
+
   mobile = false;
   events: Event[] = [];
-
-  constructor(
-    private responsive: BreakpointObserver,
-    private eventService: EventService) { }
 
   ngOnInit(): void{
     this.checkMobile();

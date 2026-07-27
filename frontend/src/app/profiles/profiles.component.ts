@@ -1,17 +1,21 @@
-import { Component, OnInit, HostBinding, HostListener, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, HostBinding, HostListener, ChangeDetectionStrategy, inject } from '@angular/core';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 import { PROFILES } from '../mock-profiles';
 import { Profile } from '../profile';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
     selector: 'app-profiles',
     templateUrl: './profiles.component.html',
     styleUrls: ['./profiles.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FontAwesomeModule]
 })
 export class ProfilesComponent implements OnInit {
+  private readonly responsive = inject(BreakpointObserver);
+
 
   @HostBinding('style.width')
   public width = '80%';
@@ -20,9 +24,7 @@ export class ProfilesComponent implements OnInit {
   profiles = PROFILES;
 
   faUser = faUser;
-
-  constructor(private responsive: BreakpointObserver) { }
-
+  
   ngOnInit(){
     this.checkMobile();
   }
