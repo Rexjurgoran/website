@@ -16,11 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MarvinComponent,
-    ProfilesComponent
-  ],
+  declarations: [],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
@@ -32,6 +28,9 @@ import { MatChipsModule } from '@angular/material/chips';
     RouterModule,
     MatCardModule,
     MatChipsModule,
+    AppComponent,
+    MarvinComponent,
+    ProfilesComponent,
     TimelineComponent
   ],
   providers: [provideHttpClient(withXhr(), withInterceptorsFromDi())]
