@@ -8,6 +8,9 @@
     width: 80%;
     min-height: calc(100vh - 10em);
 }
+h2 {
+    text-align: center;
+}
 li.profile {
     margin: 1em;
 }
