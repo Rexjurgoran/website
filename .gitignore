@@ -9,7 +9,8 @@
 
 # Node modules and dependency files
 /node_modules/
-/package-lock.json
+# Keep the lockfile tracked so npm ci works in CI
+# /package-lock.json
 /yarn.lock
 
 # Environment files
