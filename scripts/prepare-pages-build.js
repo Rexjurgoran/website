@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const rootDir = path.resolve(__dirname, "..");
-const repoRoot = path.resolve(rootDir, "..");
+const repoRoot = rootDir;
 const docsDir = path.join(repoRoot, "docs");
 const indexPath = path.join(docsDir, "index.html");
 const notFoundPath = path.join(docsDir, "404.html");
