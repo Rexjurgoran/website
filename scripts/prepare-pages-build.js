@@ -1,24 +1,24 @@
-const fs = require("fs");
-const path = require("path");
+import { mkdirSync, existsSync, copyFileSync } from "node:fs";
+import { resolve, join } from "node:path";
 
-const rootDir = path.resolve(__dirname, "..");
+const rootDir = resolve(__dirname, "..");
 const repoRoot = rootDir;
-const docsDir = path.join(repoRoot, "docs");
-const indexPath = path.join(docsDir, "index.html");
-const notFoundPath = path.join(docsDir, "404.html");
-const cnamePath = path.join(repoRoot, "CNAME");
-const docsCnamePath = path.join(docsDir, "CNAME");
+const docsDir = join(repoRoot, "docs");
+const indexPath = join(docsDir, "index.html");
+const notFoundPath = join(docsDir, "404.html");
+const cnamePath = join(repoRoot, "CNAME");
+const docsCnamePath = join(docsDir, "CNAME");
 
-fs.mkdirSync(docsDir, { recursive: true });
+mkdirSync(docsDir, { recursive: true });
 
-if (fs.existsSync(indexPath)) {
-  fs.copyFileSync(indexPath, notFoundPath);
+if (existsSync(indexPath)) {
+  copyFileSync(indexPath, notFoundPath);
 } else {
   throw new Error(`Expected build output at ${indexPath}`);
 }
 
-if (fs.existsSync(cnamePath)) {
-  fs.copyFileSync(cnamePath, docsCnamePath);
+if (existsSync(cnamePath)) {
+  copyFileSync(cnamePath, docsCnamePath);
 } else {
   throw new Error(`Expected CNAME file at ${cnamePath}`);
 }
