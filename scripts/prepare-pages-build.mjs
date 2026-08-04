@@ -1,5 +1,9 @@
 import { mkdirSync, existsSync, copyFileSync } from "node:fs";
-import { resolve, join } from "node:path";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const rootDir = resolve(__dirname, "..");
 const repoRoot = rootDir;

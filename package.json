@@ -5,8 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:pages": "npm run build && node scripts/prepare-pages-build.js",
-    "prepare:pages": "node scripts/prepare-pages-build.js",
+    "build:pages": "npm run build && node scripts/prepare-pages-build.mjs",
+    "prepare:pages": "node scripts/prepare-pages-build.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
