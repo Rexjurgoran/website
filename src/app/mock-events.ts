@@ -1,18 +1,48 @@
 import { Event, EventType} from "./event";
-import { faGraduationCap, faBriefcase, faAward } from "@fortawesome/free-solid-svg-icons";
+import { faGraduationCap, faBriefcase, faAward, faCode } from "@fortawesome/free-solid-svg-icons";
 
 export const EVENTS: Event[] = [{
+    icon: faAward,
+    date: new Date(2026,2),
+    title: 'Certified Professional for Software Architecture',
+    event: 'Achieved certification in Software Architecture',
+    type: EventType.Skill
+},{
+    icon: faCode,
+    date: new Date(2025,12),
+    title: 'Voxel Engine',
+    event: 'I am building a voxel engine to refine my Rust and Computer Graphics skills.',
+    type: EventType.Project
+},{
     icon: faAward,
     date: new Date(2025,10),
     title: 'PRINCE2 7 Foundation Certificate',
     event: 'Achieved PRINCE2 7 Foundation Certificate in Project Management',
     type: EventType.Skill
 },{
+    icon: faCode,
+    date: new Date(2024,10),
+    title: '"Ray Tracing: The Next Week" in Rust',
+    event: 'After adapting the "Ray Tracing in One Weekend" turtorial in November \'24, I started to work on the second volume in the turtorial series. This was also done with the Rust programming language.It further deepend my understanding in Rust programming concepts, Ray Tracing and graphics programming in general.',
+    type: EventType.Project
+},{
+    icon: faCode,
+    date: new Date(2024,10),
+    title: '"Ray Tracing in One Weekend" using Rust',
+    event: 'In this project I followed the well-known turtorial/book "Ray Tracing in One Weekend" by Peter Shirley, Trevor David Black and Steve Hollasch. Instead of C++ I used Rust because of personal preference and to better understand concepts and programming in Rust.',
+    type: EventType.Project
+},{
     icon: faGraduationCap,
     date: new Date(2023,6),
     title: 'Master degree', 
     event:'Achieved master degree in IT-Management', 
     type: EventType.Education
+},{
+    icon: faCode,
+    date: new Date(2023,6),
+    title: 'Personal homepage', 
+    event:'I am building my own personal homepage with Angular.', 
+    type: EventType.Project
 },{
     icon: faBriefcase,
     date: new Date(2020,9),

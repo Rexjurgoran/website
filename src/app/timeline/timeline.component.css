@@ -7,9 +7,10 @@
     backdrop-filter: blur(20px);
     width: 80%;
     min-height: calc(100vh - 10em);
-    --timeline-education: rgba(219, 102, 0);
-    --timeline-skill: rgba(102, 219, 0);
-    --timeline-position: rgba(0, 102, 219);
+    --timeline-education: #f59e0b;
+    --timeline-skill: #8b5cf6;
+    --timeline-position: #38bdf8;
+    --timeline-project: #10b981;
 }
 h2 {
     text-align: center;
@@ -21,9 +22,24 @@ h2 {
 div#card-container {
     padding-bottom: 5em;
 }
-mat-card {  
+mat-card {
     padding: 1em;
     margin: 1em;
+    border-left: 0.35rem solid transparent;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+mat-card.education {
+    border-left-color: var(--timeline-education);
+}
+mat-card.skill {
+    border-left-color: var(--timeline-skill);
+}
+mat-card.position {
+    border-left-color: var(--timeline-position);
+}
+mat-card.project {
+    border-left-color: var(--timeline-project);
 }
 fa-icon.education {
     color: var(--timeline-education);
@@ -33,4 +49,7 @@ fa-icon.skill {
 }
 fa-icon.position {
     color: var(--timeline-position);
+}
+fa-icon.project {
+    color: var(--timeline-project);
 }

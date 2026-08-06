@@ -3,7 +3,8 @@ import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 export enum EventType {
     Education = "education",
     Skill = "skill",
-    Position = "position"
+    Position = "position",
+    Project = "project"
 }
 export interface Event{
     icon: IconDefinition,

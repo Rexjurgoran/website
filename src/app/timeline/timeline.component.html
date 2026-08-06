@@ -12,7 +12,7 @@
 </mat-chip-listbox>
 <div id="card-container">
   @for (event of getFilteredEvents(); track event) {
-    <mat-card class="event" appearance="outlined">
+    <mat-card class="event" [class]="event.type" appearance="outlined">
       <mat-card-header>
         <mat-card-title-group>
           <div>

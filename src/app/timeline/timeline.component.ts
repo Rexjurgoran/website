@@ -25,7 +25,7 @@ export class TimelineComponent implements OnInit {
   mobile = false;
   events: Event[] = [];
   selectedFilter: EventType | 'all' = 'all';
-  readonly filters: (EventType | 'all')[] = ['all', EventType.Education, EventType.Skill, EventType.Position];
+  readonly filters: (EventType | 'all')[] = ['all', EventType.Education, EventType.Skill, EventType.Position, EventType.Project];
 
   ngOnInit(): void{
     this.checkMobile();
