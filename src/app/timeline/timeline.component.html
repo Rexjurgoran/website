@@ -1,6 +1,17 @@
 <h2>Here is a short overview of my professional path</h2>
+<mat-chip-listbox class="filter-chips" aria-label="Timeline filters">
+  @for (filter of filters; track filter) {
+    <mat-chip-option
+      [selected]="selectedFilter === filter"
+      (click)="selectFilter(filter)"
+      (keydown)="selectFilter(filter)"
+    >
+      {{ filter === "all" ? "All" : (filter | titlecase) }}
+    </mat-chip-option>
+  }
+</mat-chip-listbox>
 <div id="card-container">
-  @for (event of events; track event) {
+  @for (event of getFilteredEvents(); track event) {
     <mat-card class="event" appearance="outlined">
       <mat-card-header>
         <mat-card-title-group>

@@ -17,7 +17,6 @@ import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [],
-  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

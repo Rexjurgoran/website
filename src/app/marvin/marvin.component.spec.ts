@@ -8,7 +8,7 @@ describe('MarvinComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MarvinComponent]
+      imports: [MarvinComponent]
     });
     fixture = TestBed.createComponent(MarvinComponent);
     component = fixture.componentInstance;

@@ -7,10 +7,17 @@
     backdrop-filter: blur(20px);
     width: 80%;
     min-height: calc(100vh - 10em);
+    --timeline-education: rgba(219, 102, 0);
+    --timeline-skill: rgba(102, 219, 0);
+    --timeline-position: rgba(0, 102, 219);
 }
 h2 {
     text-align: center;
 }
+.filter-chips {
+    margin-bottom: 1rem;
+}
+
 div#card-container {
     padding-bottom: 5em;
 }
@@ -19,11 +26,11 @@ mat-card {
     margin: 1em;
 }
 fa-icon.education {
-    color: rgba(219, 102, 0);
+    color: var(--timeline-education);
 }
 fa-icon.skill {
-    color: rgba(102, 219, 0);
+    color: var(--timeline-skill);
 }
 fa-icon.position {
-    color: rgba(0, 102, 219);
+    color: var(--timeline-position);
 }

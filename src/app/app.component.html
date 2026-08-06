@@ -1,13 +1,20 @@
 <!--Header-->
-<header [ngClass]="{'centered':mobile}">
+<header [ngClass]="{ centered: mobile }">
   <a routerLink="">
-    <img src="assets/images/logo-nav@2x.png" alt="Home" title="Home" style="height: 60px;" />
+    <img
+      src="assets/images/logo-nav@2x.png"
+      alt="Home"
+      title="Home"
+      style="height: 60px"
+    />
   </a>
   @if (!mobile) {
     <nav>
       <a routerLink=""><fa-icon [icon]="faHouse"></fa-icon>Home</a>
       <a routerLink="/profiles"><fa-icon [icon]="faUser"></fa-icon>Profiles</a>
-      <a routerLink="/timeline"><fa-icon [icon]="faTimeline"></fa-icon>Timeline</a>
+      <a routerLink="/timeline"
+        ><fa-icon [icon]="faTimeline"></fa-icon>Timeline</a
+      >
     </nav>
   }
 </header>
@@ -17,17 +24,27 @@
 @if (!mobile) {
   <footer>
     <a href="/">
-      <img src="assets/images/logo-small.png" alt="Home" title="Home" style="height: 40px; margin: 10px;" />
+      <img
+        src="assets/images/logo-small.png"
+        alt="Home"
+        title="Home"
+        style="height: 40px; margin: 10px"
+      />
     </a>
-    <div>© 2024 Marvin Henßer</div>
+    <div>© 2026 Marvin Henßer</div>
   </footer>
 }
 @if (mobile) {
   <footer>
-    <nav class="mobile" >
+    <nav class="mobile">
       <a routerLink="/profiles"><fa-icon [icon]="faUser"></fa-icon></a>
       <a routerLink="">
-        <img src="assets/images/logo-small.png" alt="Home" title="Home" style="height: 40px; margin: 10px;" />
+        <img
+          src="assets/images/logo-small.png"
+          alt="Home"
+          title="Home"
+          style="height: 40px; margin: 10px"
+        />
       </a>
       <a routerLink="/timeline"><fa-icon [icon]="faTimeline"></fa-icon></a>
     </nav>
