@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     font-family: "Averta",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    background-color: var(--mat-sys-background);
     background-image: url("assets/images/background.jpg");
-    color: #e6edf3;
+    color: var(--mat-sys-on-background);
     margin: 0;
 }
 header {
@@ -10,7 +11,8 @@ header {
     height: 5em;
     display: flex;
     align-items: center;
-    background-color: #161b22;
+    background-color: var(--mat-sys-surface);
+    border-bottom: 1px solid var(--mat-sys-surface-container-high);
 }
 header.centered{
     padding: 0;
@@ -18,7 +20,8 @@ header.centered{
 }
 footer {
     height: 5em;
-    background-color: #161b22;
+    background-color: var(--mat-sys-surface);
+    border-top: 1px solid var(--mat-sys-surface-container-high);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,8 +37,17 @@ fa-icon{
     font-size: x-large;
 }
 a {
-    color: #e6edf3;
+    color: var(--mat-sys-primary);
     text-decoration: none;
+}
+a:hover {
+    color: var(--mat-sys-primary-fixed);
+}
+header a, footer a {
+    color: var(--mat-sys-on-surface);
+}
+header a:hover, footer a:hover {
+    color: var(--mat-sys-primary-fixed);
 }
 nav > a{
     margin: 1em;
